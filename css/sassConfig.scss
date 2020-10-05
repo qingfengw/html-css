@@ -1,0 +1,19 @@
+@charset "utf-8";
+// 主色
+$color-main: #01aab6;
+// 辅色
+$color-second: #b45d01;
+// 文字主色
+$text-main: #010101;
+// 文字辅色
+$text-gray: #a0a0a0;
+// 内容宽度
+$container: 1200px;
+
+@mixin webkit($type,$value) {
+  -webkit-#{$type}: $value;// CSS3写法
+  -moz-#{$type}: $value;
+  -ms-#{$type}:$value;
+  -o-#{$type}: $value;
+  #{$type}: $value;
+}

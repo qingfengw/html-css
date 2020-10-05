@@ -1,0 +1,120 @@
+@charset "utf-8";
+@import "sassConfig";
+
+.color-main {
+  color: $color-main;
+}
+
+.color-second {
+  color: $color-second;
+}
+
+.text-main {
+  color: $text-main;
+}
+
+// 语言菜单
+.lang {
+  width: 53px;
+  height: 22px;
+  color: $text-gray;
+  background-color: #ececec;
+  text-align: center;
+  // 使用伪类的方式
+  &:after{
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-left: 1px solid #b5b5b5;
+    border-bottom: 1px solid #b5b5b5;
+    margin: 0px 0px 2px 2px;
+    @include webkit(box-sizing,border-box);
+    transform: rotate(-45deg);
+  }
+}
+
+.menu-link {
+
+  a,
+  span,
+  div {
+    line-height: 22px;
+    float: right;
+    text-decoration: none;
+  }
+
+  a {
+    color: $text-gray;
+  }
+
+  span {
+    width: 1px;
+    height: 12px;
+    margin-left: 11px;
+    margin-right: 12px;
+    margin-top: 6px;
+    background-color: #cfcfcf;
+  }
+
+  i {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    // 方法二使用边框划线的方式操作
+    border-left: 1px solid #b5b5b5;
+    border-bottom: 1px solid #b5b5b5;
+    margin: 0px 0px 2px 2px;
+    // 方法一背景图的方式写
+    // background-image: url(../images/icon-lang-arrow.png);
+    // box-sizing: border-box; //将盒子变为IE盒子模型
+    // 封装scss方法
+    // -webkit-box-sizing: border-box;// CSS3写法
+    @include webkit(box-sizing,border-box);
+    transform: rotate(-45deg);
+  }
+}
+
+.container {
+  width: $container;
+  margin: 0 auto;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.logo {
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  // 消除图片下方的空隙线
+  img {
+    display: block;
+  }
+}
+
+/* 清除浮动 */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+.clearfix {
+  display: block;
+}
